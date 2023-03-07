@@ -16,5 +16,13 @@ pipeline {
                 echo 'Deploying...'
             }
         }
+        stage('cat REAME') {
+            when {
+                branch "fix-*"
+            }
+            steps {
+                sh 'cat README.md'
+            }
+        }
     }
 }
