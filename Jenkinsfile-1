@@ -15,6 +15,9 @@ pipeline {
             when {
                 environment name: 'branch', value: 'production'
             }
+            steps {
+                echo "I love programming"
+            }
         }
     }
 }
