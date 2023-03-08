@@ -1,0 +1,20 @@
+pipeline {
+    agent { dockerfile true }
+
+    environment {
+        branch = 'production'
+    }
+
+    stages {
+        stage('Buld nginx image') {
+            steps {
+                echo "Wow! It works!"   
+            }
+        } 
+        stage('Conditional') {
+            when {
+                environment name: 'branch', value: 'production'
+            }
+        }
+    }
+}
